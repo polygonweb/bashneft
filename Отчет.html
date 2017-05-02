@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 8]>
+<html class="no-js ie ltie8 ltie9 ltie10" lang="ru">
+<![endif]-->
+
+<!--[if IE 8]>
+<html class="no-js ie ie8 ltie9 ltie10" lang="ru">
+<![endif]-->
+
+<!--[if IE 9]>
+<html class="no-js ie gtie8 ie9 ltie10" lang="ru">
+<![endif]-->
+
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js" lang="ru">
+<!--><![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/main.css">
+
+	<script src="js/jquery-1.11.2.min.js"></script>
+
+	<!-- проверка поддержки каких-либо свойств в разных браузерах -->
+	<script src="js/modernizr.custom.js"></script>
+
+	<!-- поддержка html5-тегов, css3-селекторов, медиа-запросов в IE<=8 -->
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/nwmatcher-1.2.5.js"></script>
+		<script src="js/selectivizr-min.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- скрипты -->
+	<script src="js/scripts.js"></script>
+
+	<title>Отчет</title>
+</head>
+<body class="page">
+
+
+	<!-- шапка -->
+	<div class="header gray-grad">
+
+		<!-- лого -->
+		<a href="#" class="header__logo logo" title="Башнефть. Акционерная нефтяная компания"></a>
+		<!-- end лого -->
+
+		<!-- заголовок -->
+		<h2 class="header__title">
+			<span class="header__title-text">Автоматизированная система оценки экономической эффективности<br>
+			проектов разработки нефтяных месторождений</span>
+		</h2>
+		<!-- end заголовок -->
+
+		<!-- меню пользователя -->
+		<div class="header__menu user-menu">
+			<span class="user-menu__item user-menu__name">Админ 1</span>
+			<a href="#" class="user-menu__item user-menu__log"></a>
+		</div>
+		<!-- end меню пользователя -->
+	</div>
+	<!-- end шапка -->
+
+
+	<!-- верхняя панель -->
+	<div class="top-panel  cf  gray-grad">
+		<!-- верхнее меню -->
+		<nav class="top-panel__nav  top-nav  cf grad-nav">
+			<a href="#" class="top-nav__item  grad-nav__item  grad-nav__item_active">
+				<div class="grad-nav__expand  grad"></div>
+				<span class="grad-nav__text">Сбор данных</span>
+			</a>
+			<a href="#" class="top-nav__item grad-nav__item">
+				<div class="grad-nav__expand grad"></div>
+				<span class="grad-nav__text">Формирование отчетности по показателям эффективности месторождений</span>
+			</a>
+		</nav>
+		<!-- end верхнее меню -->
+
+		<!-- панель инструментов -->
+		<div class="top-panel__tools  tools  cf">
+			<a href="#" class="tools__item ico ico_edit" title="Редактировать">
+				<span class="tools__item-text">Редактировать</span>
+			</a>
+			<a href="#" class="tools__item ico ico_xls" title="Выгрузить XLS">
+				<span class="tools__item-text">Выгрузить XLS</span>
+			</a>
+			<a href="#" class="tools__item ico ico_pdf" title="Выгрузить PDF">
+				<span class="tools__item-text">Выгрузить PDF</span>
+			</a>
+		</div>
+		<!-- end панель инструментов -->
+	</div>
+	<!-- end верхняя панель -->
+
+	<div class="page__middle">
+		<!-- 2-х-колоночная стурктура -->
+		<div class="layout">
+
+			<!-- боковая колонка -->
+			<div class="layout__cell  layout__side">
+				<!-- боковое меню -->
+				<nav class="side-nav">
+					<a href="#" class="side-nav__item side-nav__item_active">Макроэкономика</a>
+					<a href="#" class="side-nav__item">Нормативы для расчета капитальных вложений</a>
+					<a href="#" class="side-nav__item">Нормативы для расчета затрат на строительство и реконструкцию коммуникаций</a>
+					<a href="#" class="side-nav__item">Нормативы для расчета площадочных объектов</a>
+					<a href="#" class="side-nav__item">Программа ГРР, ГРА</a>
+					<a href="#" class="side-nav__item">Производство</a>
+					<a href="#" class="side-nav__item">Капитальные вложения</a>
+					<a href="#" class="side-nav__item">Удельные эксплуатационные затраты</a>
+					<a href="#" class="side-nav__item">Расчет эксплуатационных затрат</a>
+					<a href="#" class="side-nav__item">Амортизация</a>
+					<a href="#" class="side-nav__item">Налоги</a>
+				</nav>
+				<!-- end боковое меню -->
+			</div>
+			<!-- end боковая колонка -->
+
+			<!-- основная часть -->
+			<div class="layout__cell layout__main">
+
+				<!-- page__content -->
+				<div class="page__content">
+
+					<div class="page__header">
+						<h2 class="page__title">Макроэкономика</h2>
+					</div>
+
+					<!-- filter  -->
+					<div class="filter">
+						<div class="filter-group">
+							<label class="filter-group__label">Месторождение</label>
+							<div class="filter-group__input select cf">
+								<span class="select__ico select__ico_drop"></span>
+								<span class="select__ico select__ico_search ico ico_search"></span>
+								<span class="select__info">
+									Выделено (<span>0</span>)
+								</span>
+							</div>
+						</div>
+						<div class="filter-group">
+							<label class="filter-group__label">Периоды проекта</label>
+							<div class="filter-group__input select cf">
+								<span class="select__ico select__ico_drop"></span>
+								<span class="select__ico select__ico_search ico ico_search"></span>
+								<span class="select__info">
+									Выделено (<span>0</span>)
+								</span>
+							</div>
+						</div>
+					</div>
+					<!-- end filter -->
+
+					<table class="table table_width_full table_row_hover">
+						<thead class="table__head">
+							<tr class="table__row">
+								<td class="table__col">Показатель</td>
+								<td class="table__col">Ед. изм.</td>
+								<td class="table__col">2012</td>
+							</tr>
+						</thead>
+						<tbody class="table__body">
+							<tr class="table__row">
+								<td class="table__col  table__col_head" colspan="3">Макроэкономика</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col">Oil price “Brent”</td>
+								<td class="table__col">$/ bbl</td>
+								<td class="table__col">90,0</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col">Oil price “Urals”</td>
+								<td class="table__col">$/ bbl</td>
+								<td class="table__col">110,6</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col">Цена газа на внутреннем рынке</td>
+								<td class="table__col">руб/1000м<sup>3</sup></td>
+								<td class="table__col">0,0</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col">Курс - rub/usd</td>
+								<td class="table__col">руб/$</td>
+								<td class="table__col">31,1</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col">Ставка дисконтирования</td>
+								<td class="table__col">%</td>
+								<td class="table__col">10,9</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col">Индекс мировых цена на нефть</td>
+								<td class="table__col">%</td>
+								<td class="table__col">100,0</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col">Индекс PPI США</td>
+								<td class="table__col">%</td>
+								<td class="table__col">100,0</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col">Индекс PPI РФ</td>
+								<td class="table__col">%</td>
+								<td class="table__col">100,0</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col">Индекс CPI США</td>
+								<td class="table__col">%</td>
+								<td class="table__col">100,0</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col">Индекс CPI РФ</td>
+								<td class="table__col">%</td>
+								<td class="table__col">100,0</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col">Индекс цен на природный газ</td>
+								<td class="table__col">%</td>
+								<td class="table__col">100,0</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col  table__col_head" colspan="3">Темп роста ж/д тарифов</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col">на экспорт</td>
+								<td class="table__col">%</td>
+								<td class="table__col">100,0</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col  table__col_head" colspan="3">Темп роста тарифов на трубопроводный тр-т</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col">на экспорт</td>
+								<td class="table__col">%</td>
+								<td class="table__col">100,0</td>
+							</tr>
+							<tr class="table__row">
+								<td class="table__col">на экспорт</td>
+								<td class="table__col">%</td>
+								<td class="table__col">на НПЗ</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+				<!-- end page__content -->
+			</div>
+			<!-- end основная часть -->
+
+		</div>
+		<!-- end 2-х-колоночная стурктура -->
+	</div>
+
+</body>
+</html>

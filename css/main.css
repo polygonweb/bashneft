@@ -1,0 +1,966 @@
+/* Базовые  стили
+===========================================================
+*/
+
+/* блочная модель */
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+
+/* корректное отображение новых тегов */
+article, aside,
+details,
+figcaption, figure, footer,
+header,hgroup,
+main, menu,
+nav,
+section, summary {
+	display: block;
+}
+
+
+/* удаление обводки изображений внутри ссылок */
+img {
+	border: 0;
+}
+
+
+ul {
+	list-style-type: none;
+}
+
+
+a {
+	text-decoration: none;
+	background-color: transparent;
+}
+	a:active,
+	a:hover {
+		outline: 0;
+	}
+
+
+
+/* Типографика
+===========================================================
+*/
+body {
+	font: normal 15px/18px Arial, Helvetica, sans-serif;
+	color: #4d4d4d;
+}
+
+
+
+
+/* Формы и элементы упарвления
+===========================================================
+*/
+
+/* выпадающий список с поиском */
+.select {
+	display: inline-block;
+	border: 1px solid #dedede;
+	background: #fff;
+	cursor: pointer;
+}
+	.select:hover {
+		border-color: #4a9331;
+		-webkit-box-shadow: 0 0 5px rgba(74, 147, 49, 0.4);
+		        box-shadow: 0 0 5px rgba(74, 147, 49, 0.4);
+	}
+		.select:hover .select__ico {
+			border-left-color: #4a9331;
+		}
+	.select__info {
+		overflow: hidden;
+		display: block;
+		padding: 0 10px;
+		height: 31px;
+		line-height: 31px;
+		font-size: 13px;
+		color: #808080;
+	}
+
+	.select__ico {
+		position: relative;
+		float: right;
+		width: 34px;
+		height: 31px;
+		border-left: 1px solid #dedede;
+	}
+		.select__ico:before {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+		.select__ico_drop {}
+			.select__ico_drop:before {
+				content: '';
+				width: 0;
+				height: 0;
+				border: 4px solid transparent;
+				border-top-color: #646464;
+				border-bottom: none;
+			}
+				.select__ico_drop:hover:before {
+					border-top-color: #4a9331;
+				}
+		.select__ico_search {}
+
+
+
+/* Общие элементы
+===========================================================
+*/
+
+/* очиста плавающих элементов */
+.cf {}
+	.cf:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+
+/* частоиспользуемые градиенты */
+/* зеленый градиент */
+.grad {
+	background: #7fb43a;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdmYjQzYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxOTc1MjQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7fb43a), color-stop(100%,#197524));
+	background: -webkit-linear-gradient(top, #7fb43a 0%, #197524 100%);
+	background:    -moz-linear-gradient(top, #7fb43a 0%, #197524 100%);
+	background:     -ms-linear-gradient(top, #7fb43a 0%, #197524 100%);
+	background:      -o-linear-gradient(top, #7fb43a 0%, #197524 100%);
+	background:   linear-gradient(to bottom, #7fb43a 0%, #197524 100%);
+}
+	.ie8 .grad {
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7fb43a', endColorstr='#197524', GradientType=0 );
+	}
+
+/* серый градиент */
+.gray-grad {
+	background: #f9f9f9;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y5ZjlmOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlN2U4ZTkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9f9), color-stop(100%,#e7e8e9));
+	background: -webkit-linear-gradient(top, #f9f9f9 0%, #e7e8e9 100%);
+	background:    -moz-linear-gradient(top, #f9f9f9 0%, #e7e8e9 100%);
+	background:     -ms-linear-gradient(top, #f9f9f9 0%, #e7e8e9 100%);
+	background:      -o-linear-gradient(top, #f9f9f9 0%, #e7e8e9 100%);
+	background:   linear-gradient(to bottom, #f9f9f9 0%, #e7e8e9 100%);
+}
+	.ie8 .gray-grad {
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#e7e8e9',GradientType=0 );
+	}
+
+/* иконки различных инструментов */
+.ico {}
+	.ico:before {
+		content: '';
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		background: none no-repeat;
+	}
+		.ico:hover:before {
+			background-position: 0 -16px;
+		}
+
+		.ico_edit:before { background-image: url("../img/tool-edit.png"); }
+		.ico_xls:before { background-image: url("../img/tool-xls.png"); }
+		.ico_pdf:before { background-image: url("../img/tool-pdf.png"); }
+		.ico_search:before { background-image: url("../img/tool-search.png"); }
+
+
+/* таблицы */
+/* основное оформление таблиц */
+.table {
+	border-collapse: collapse;
+	color: #808080;
+}
+
+	.table__row {
+		border-bottom: 1px solid #e6e6e6;
+	}
+		.table__col {
+			padding: 8px 15px;
+			font-size: 12px;
+			color: #808080;
+		}
+			.table__col_head {
+				font-weight: bold;
+				font-size: 13px;
+				color: #4d4d4d;
+			}
+
+	.table__head {
+		background: #eee;
+	}
+		.table__head .table__col {
+			padding-top: 10px;
+			padding-bottom: 10px;
+			font-size: 15px;
+			letter-spacing: 0.003em;
+			font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+			color: #333;
+		}
+	.table__body {}
+
+	/* по-умолчанию таблицы оставляем с width: auto;
+	для растягивания используем этот класс */
+	.table_width_full {
+		width: 100%;
+	}
+
+	/* таблицы с изменением фрна строки при наведении на нее */
+	.table_row_hover {}
+		.table_row_hover .table__body .table__row {
+			-webkit-transition: .35s;
+			   -moz-transition: .35s;
+			     -o-transition: .35s;
+			        transition: .35s;
+		}
+			.table_row_hover .table__body .table__row:hover {
+				background: #f8f8f8;
+			}
+
+
+/* меню, при наведении на пункты которого появляется фон с выходом из-за границ */
+.grad-nav {}
+	.grad-nav__item {
+		display: block;
+		position: relative;
+		z-index: 0;
+		color: inherit;
+		-webkit-transition: .3s;
+		   -moz-transition: .3s;
+		     -o-transition: .3s;
+		        transition: .3s;
+	}
+	.grad-nav__text {
+		position: relative;
+		z-index: 2;
+	}
+	.grad-nav__expand {
+		position: absolute;
+		z-index: 1;
+		top:    50%;
+		bottom: 50%;
+		left:   50%;
+		right:  50%;
+		visibility: hidden;
+		opacity: 0;
+		-webkit-transition: .3s;
+		   -moz-transition: .3s;
+		     -o-transition: .3s;
+		        transition: .3s;
+	}
+		.grad-nav__item:hover,
+		.grad-nav__item_active {
+			color: #fff;
+			z-index: 1;
+			-webkit-transition: all .3s, z-index 0s 0s;
+			   -moz-transition: all .3s, z-index 0s 0s;
+			     -o-transition: all .3s, z-index 0s 0s;
+			        transition: all .3s, z-index 0s 0s;
+		}
+			.grad-nav__item_active {
+				z-index: 2;
+			}
+			.grad-nav__item:hover .grad-nav__expand,
+			.grad-nav__item_active .grad-nav__expand {
+				top:    -4px;
+				bottom: -4px;
+				left:   -4px;
+				right:  -4px;
+				visibility: visible;
+				opacity: 1;
+			}
+
+
+/* статусы */
+.status {}
+
+	/* иконка для отбражения статуса */
+	.status__ico {
+		display: inline-block;
+	}
+		.status__ico:before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			width: 36px;
+			height: 36px;
+			background: url("../img/status.png") no-repeat;
+		}
+
+	.status__text {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	/* на утверждении */
+	.status_for-approval {
+		color: #4a9331;
+	}
+		.status_for-approval .status__ico:before {
+			background-position: 0 0;
+		}
+
+	/* в работе */
+	.status_work {
+		color: #b80874;
+	}
+		.status_work .status__ico:before {
+			background-position: -36px 0;
+		}
+
+
+/* списки типа "ключ-значение" 
+	<dl class="hash">
+		<dt class="hash__key"></dt>
+		<dd class="hash__val"></dd>
+	</dl>
+*/
+.hash {}
+	.hash__key {
+		font-size: 13px;
+		font-weight: bold;
+	}
+	.hash__val {
+		font-size: 12px;
+		color: #808080;
+	}
+
+
+/* лого */
+.logo {
+	display: inline-block;
+	font: 0/0 a;
+	white-space: nowrap;
+}
+	.logo:before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 205px;
+		height: 47px;
+		background: url("../img/logo.png") no-repeat;
+	}
+	.logo:after {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+
+
+
+
+/* виджет для графиков */
+.widget {
+	border: 1px solid #dedede;
+	color: #fff;
+}
+	.widget__head {
+		padding: 12px;
+		color: #fff;
+		background-color: #7fb43a;
+	}
+	.widget__body {
+		padding: 12px;
+		text-align: center;
+	}
+		.widget__body img {
+			max-width: 100%;
+			height: auto;
+		}
+
+
+/* галерея виджетов */
+.widget-gallery {
+	margin: 0 -5px;
+	font-size: 0;
+}
+	.widget-gallery:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+
+	.widget-gallery__item {
+		margin-bottom: 10px;
+		font-size: 15px;
+		display: inline-block;
+		vertical-align: top;
+		width: 50%;
+		padding: 0 5px;
+	}
+		.widget-gallery__item .widget__body {
+			min-height: 417px;
+		}
+
+
+
+
+/* Структура страницы
+===========================================================
+*/
+
+html, body {
+	height: 100%;
+}
+
+html {
+	min-width: 1024px;
+}
+
+/* 2-x-колоночная структура */
+.layout {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+	.layout__cell {
+		display: table-cell;
+		vertical-align: top;
+	}
+	/* боковая колонка */
+	.layout__side {
+		width: 280px;
+		background-color: #f7f7f7;
+		background-image: url("../img/pattern.png");
+	}
+	/* основная колонка */
+	.layout__main {
+		width: auto;
+	}
+
+
+
+
+/* Элементы страниц
+===========================================================
+*/
+
+.page {}
+	.page__middle {
+		height: 100%;
+		margin-top: -104px;
+		padding-top: 104px;
+	}
+	.page__content {
+		padding: 20px 20px 28px 28px;
+	}
+	.page__header {
+		margin-bottom: 30px;
+		padding-bottom: 10px;
+		border-bottom: 2px solid #e9b0ce;
+	}
+	.page__title {
+		font-size: 22px;
+		letter-spacing: 0.001em;
+		font-weight: bold;
+		font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+	}
+
+
+
+/* шапка */
+.header {
+	position: relative;
+	z-index: 1;
+	height: 64px;
+	line-height: 64px;
+	border-bottom: 1px solid #c9c9ca;
+}
+	.header__logo {
+		float: left;
+		padding: 0 20px;
+		height: 100%;
+	}
+	.header__menu {
+		float: right;
+		height: 100%;
+		padding-right: 20px;
+	}
+
+	.header__title {
+		float: left;
+		height: 100%;
+		padding-left: 18px;
+		font-size: 0;
+		font-weight: normal;
+		font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+		color: #888;
+		border-left: 1px solid #e6e6e6;
+	}
+		.header__title:before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+		.header__title-text {
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 14px;
+			line-height: 16px;
+			letter-spacing: 0.02em;
+		}
+
+
+
+/* меню пользователя */
+.user-menu {}
+	.user-menu:before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+	.user-menu__item {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.user-menu__name {
+		font-size: 14px;
+		line-height: 16px;
+		letter-spacing: 0.02em;
+		color: #808080;
+	}
+		.user-menu__name:before {
+			content: '';
+			margin-right: 8px;
+			display: inline-block;
+			vertical-align: sub;
+			width: 16px;
+			height: 16px;
+			background: url("../img/user.png") no-repeat;
+		}
+	.user-menu__log {
+		margin-left: 50px;
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		background: url("../img/login.png") no-repeat;
+	}
+		.user-menu__log:hover {
+			background-position: 0 bottom;
+		}
+
+
+
+/* боковое меню */
+.side-nav {
+	font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+	letter-spacing: 0.01em;
+}
+	.side-nav__item {
+		display: block;
+		padding: 10px 34px;
+		color: #4d4d4d;
+		border-bottom: 1px solid #dcdcdc;
+		background: url("../img/list-ico.png") no-repeat 20px 16px;
+	}
+		.side-nav__item:hover,
+		.side-nav__item_active {
+			color: #4a9331;
+		}
+
+
+/* верхняя панель - меню  */
+.top-panel {
+	padding-right: 20px;
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.43);
+	        box-shadow: 0 0 10px rgba(0,0,0,.43);
+}
+	.ie8 .top-panel {
+		border-bottom: 1px solid #c9c9ca;
+	}
+	.top-panel__nav {
+		float: left;
+		height: 100%;
+	}
+	.top-panel__tools {
+		float: right;
+		height: 100%;
+	}
+
+
+/* меню в верхней панели */
+.top-nav {
+	font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	letter-spacing: 0.01em;
+}
+	.top-nav__item {
+		float: left;
+		padding: 0 20px;
+		border-left: 1px solid #fff;
+		border-right: 1px solid #c9c9ca;
+	}
+		.top-nav__item:first-child {
+			border-left: none;
+		}
+		.top-nav__item:last-child {
+			border-right: none;
+		}
+
+
+/* элементы управления в верхней панели */
+.tools {
+	border-right: 1px solid #fff;
+	border-left: 1px solid #c9c9ca;
+}
+	.tools__item {
+		float: left;
+		padding: 0 14px;
+		border-left: 1px solid #fff;
+		border-right: 1px solid #c9c9ca;
+	}
+	.tools__item-text {
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 13px;
+		line-height: 1;
+		font-weight: bold;
+		color: #333;
+	}
+		.tools__item.ico:before {
+			margin-right: 4px;
+			vertical-align: middle;
+		}
+		.tools__item:hover .tools__item-text {
+			color: #4a9331;
+		}
+
+
+
+
+
+/* информация о проекте */
+.project {
+	max-width: 692px;
+}
+	.project__name {
+		color: #b80874;
+	}
+	.project__body {}
+
+	.project-info {
+		margin-bottom: 30px;
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+	}
+		.project-info__item {
+			display: table-cell;
+			vertical-align: top;
+		}
+
+		.project__status {
+			font-size: 16px;
+			font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+		}
+			.project__status .status__ico:before {
+				margin-right: 5px;
+			}
+
+
+	/* инструменты для управления проектом */
+	.project-tools {
+		margin-bottom: 30px;
+		font-size: 0;
+	}
+		.project-tools__item {
+			margin-left: -1px;
+			display: inline-block;
+			vertical-align: top;
+			width: 20%;
+			height: 105px;
+			padding: 20px 12px 0;
+			text-align: center;
+			font-size: 13px;
+			font-weight: bold;
+			border: 1px solid #c9c9ca;
+			box-shadow: inset 1px 0 #fff;
+		}
+			.project-tools__item:first-child {
+				box-shadow: none;
+				margin-left: 0;
+			}
+
+		.project-tools__ico {
+			position: relative;
+			z-index: 1;
+			display: inline-block;
+			width: 36px;
+			height: 36px;
+			background: none no-repeat;
+		}
+			.project-tools__item:hover .project-tools__ico {
+				background-position: 0 bottom;
+			}
+			.project-tools__item_agree .project-tools__ico {
+				background-image: url("../img/project-agree.png");
+			}
+			.project-tools__item_not-agree .project-tools__ico {
+				background-image: url("../img/project-not-agree.png");
+			}
+			.project-tools__item_approve .project-tools__ico {
+				background-image: url("../img/project-approve.png");
+			}
+			.project-tools__item_cancel .project-tools__ico {
+				background-image: url("../img/project-cancel.png");
+			}
+			.project-tools__item_dispose .project-tools__ico {
+				background-image: url("../img/project-dispose.png");
+			}
+			.project-tools__item_provide .project-tools__ico {
+				background-image: url("../img/project-provide.png");
+			}
+
+		.project-tools .grad-nav__text {
+			margin-top: 2px;
+			display: block;
+		}
+
+		.project__summary {}
+
+		/* первая ячейка в таблицах в сводной информации проекта */
+		.project__first-cell {
+			width: 235px;
+		}
+
+
+/* область фильтров */
+.filter {
+	margin-bottom: 15px;
+}
+	.filter-group {
+		margin-bottom: 15px;
+		margin-right: 20px;
+		display: inline-block;
+	}
+		.filter-group:last-child {
+			margin-right: 0;
+		}
+
+		.filter-group__label {
+			margin-right: 12px;
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 13px;
+			letter-spacing: 0.02em;
+			font-weight: bold;
+		}
+		.filter-group__input {
+			display: inline-block;
+			vertical-align: middle;
+		}
+			.filter-group__input.select {
+				min-width: 211px;
+			}
+
+
+
+
+/* главная страница */
+.page_main {
+	background: url("../img/main-page-bg.png") no-repeat 100% 100%;
+}
+	.page_main .top-panel,
+	.page_main .layout__side {
+		display: none;
+	}
+	.page_main .page__middle {
+		margin-top: -64px;
+		padding-top: 64px;
+	}
+	.page_main .layout__main {
+		text-align: center;
+		vertical-align: middle;
+	}
+
+
+/* выбор  днйствия на главной странице */
+.main-tools {
+	display: inline-block;
+	border: 1px solid #c9c9ca;
+	font-size: 0;
+	white-space: nowrap;
+	color: #333;
+	font-weight: bold;
+}
+	.main-tools__item {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		font-size: 13px;
+		line-height: 16px;
+		width: 229px;
+		height: 211px;
+		border-left: 1px solid #fff;
+		border-right: 1px solid #c9c9ca;
+	}
+		.main-tools__item:first-child {
+			border-left: none;
+		}
+		.main-tools__item:last-child {
+			border-right: none;
+		}
+
+	.main-tools__item:before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+		.main-tools__item .grad-nav__text {
+			margin-top: 12px;
+			display: inline-block;
+			height: 48px;
+			vertical-align: top;
+			white-space: normal;
+		}
+
+		.main-tools__one-line {
+			padding: 16px 0;
+		}
+
+
+	.main-tools__sub {
+		position: absolute;
+		z-index: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-top: 1px solid #c9c9ca;
+	}
+		.main-tools__sub-item {
+			position: relative;
+			float: left;
+			width: 50%;
+			height: 41px;
+			line-height: 40px;
+			border-left: 1px solid #fff;
+			border-right: 1px solid #c9c9ca;
+			box-shadow: inset 0 1px #fff;
+			color: inherit;
+		}
+			.main-tools__sub-item:before {
+				content: '';
+				position: absolute;
+				z-index: 0;
+				top:    50%;
+				bottom: 50%;
+				left:   50%;
+				right:  50%;
+				background: #e7e8e9;
+				-webkit-transition: .3s;
+				   -moz-transition: .3s;
+				     -o-transition: .3s;
+				        transition: .3s;
+			}
+			.main-tools__sub-item:first-child {
+				border-left: none;
+			}
+			.main-tools__sub-item:last-child {
+				border-right: none;
+			}
+
+			.main-tools__item:hover .main-tools__sub-item {
+				color: #333;
+			}
+				.main-tools__item:first-child:hover .grad-nav__expand {
+					bottom: 37px;
+				}
+
+			.main-tools__sub-item:hover,
+			.main-tools__sub-item_active {
+				color: #fff !important;
+				z-index: 1;
+			}
+
+
+			.main-tools__sub-item:hover:before {
+				top:     0px;
+				bottom: -4px;
+				left:   -4px;
+				right:  -4px;
+				background: #197524;
+			}
+
+		.main-tools__sub-text {
+			position: relative;
+			z-index: 1;
+		}
+
+	.main-tools__ico {
+		width: 58px;
+		height: 46px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+		.main-tools__ico:before {
+			content: '';
+			position: relative;
+			z-index: 1;
+			display: inline-block;
+			width: 58px;
+			height: 46px;
+			background: url("../img/main-tools.png") no-repeat;
+		}
+
+	/* иконки, их смена при наведении*/
+	.main-tools__item_data {}
+		.main-tools__item_data:hover .main-tools__ico:before {
+			background-position: 0 -46px;
+		}
+
+	.main-tools__item_report .main-tools__ico:before {
+		background-position: -58px 0;
+	}
+		.main-tools__item_report:hover .main-tools__ico:before {
+			background-position: -58px -46px;
+		}
+
+
+
+
+@media (max-width: 1200px) {
+
+	.tools__item-text {
+		display: none;
+	}
+	.tools__item.ico:before {
+		margin-right: 0;
+	}
+
+	.user-menu__log {
+		margin-left: 10px;
+	}
+
+	.widget-gallery__item {
+		width: 100%;
+	}
+}
